@@ -31,6 +31,22 @@
             "tsConfig": "projects/foo-lib/tsconfig.spec.json",
             "karmaConfig": "projects/foo-lib/karma.conf.js"
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "foo-lib:build",
+            "port": 4400,
+            "configDir": "projects/foo-lib/.storybook"
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/foo-lib/.storybook",
+            "outputDir": "dist/foo-lib-storybook",
+            "browserTarget": "foo-lib:build"
+          }
         }
       }
     },
@@ -62,9 +78,24 @@
             "tsConfig": "projects/bar-lib/tsconfig.spec.json",
             "karmaConfig": "projects/bar-lib/karma.conf.js"
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "bar-lib:build",
+            "port": 4401,
+            "configDir": "projects/bar-lib/.storybook"
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "browserTarget": "bar-lib:build",
+            "outputDir": "dist/bar-lib-storybook",
+            "configDir": "projects/bar-lib/.storybook"
+          }
         }
       }
     }
-  },
-  "defaultProject": "foo-lib"
+  }
 }

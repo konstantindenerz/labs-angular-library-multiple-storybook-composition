@@ -9,7 +9,8 @@
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "build-storybook": "npm run docs:json && build-storybook",
+    "build-all-storybooks": "npx ng run foo-lib:build-storybook && npx ng run bar-lib:build-storybook"
   },
   "private": true,
   "dependencies": {
