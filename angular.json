@@ -33,6 +33,37 @@
           }
         }
       }
+    },
+    "bar-lib": {
+      "projectType": "library",
+      "root": "projects/bar-lib",
+      "sourceRoot": "projects/bar-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/bar-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bar-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bar-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bar-lib/src/test.ts",
+            "tsConfig": "projects/bar-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/bar-lib/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "foo-lib"
